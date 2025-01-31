@@ -7,6 +7,19 @@ Supports: MacOS
 2. Mount the .DMG file
 3. Move the FilmSimId folder into your ```/Application``` folder.
 
+# How to Use
+1. Launch FSI.app
+<img width="192" alt="FSI.app" src="https://github.com/user-attachments/assets/a139114f-f7b0-4635-a587-670bdf992a01" />
+
+2. Follow the prompts to select a mode
+<img width="682" alt="Terminal prompt to select a mode" src="https://github.com/user-attachments/assets/ddfbd94a-8bda-47a2-a611-5ce011e0035b" />
+
+3. When prompted for a Photo or Folder, drag and drop from a Finder window
+<img width="682" alt="Drag and drop a photo" src="https://github.com/user-attachments/assets/0c111a2d-381d-42bb-a852-72bc9ba34104" />
+
+4. Hit Enter to see results
+<img width="682" alt="Results" src="https://github.com/user-attachments/assets/c6dfdf69-21d0-4a7f-aad0-a6d320ab5255" />
+
 # Modes
 ### Single Photo Mode
 Single Photo Mode allows you to check individual photo's film simulation/recipe. To use Single Photo Mode, drag and drop the photo into the terminal window when prompted, then press enter.
@@ -32,6 +45,7 @@ Clarity                         : 0
 Shadow Tone                     : 0 (normal)
 Highlight Tone                  : 0 (normal)
 Grain Effect Roughness          : Off
+
 Color Chrome Effect             : Off
 Grain Effect Size               : Off
 Color Chrome FX Blue            : Off
