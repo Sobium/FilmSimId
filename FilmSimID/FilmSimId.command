@@ -46,10 +46,10 @@ while $run; do
 		runMultiMode=true
 
 		while $runMultiMode; do
-			read -p 'Folder: ' path
+			read -p 'Folder: ' path rename
 			echo ''
 
-			if [[ $path == "exit" || $dir == "x" ]]; then
+			if [[ $path == "exit" || $path == "x" ]]; then
 				runMultiMode=false
 				run=false
 			elif [[ $path == "z" ]]; then
@@ -61,6 +61,11 @@ while $run; do
 					for i in ${!formulas[@]}; do
 						if [[ "$output" == *"${formulas[$i]}"* ]]; then
 							echo "$(basename $file) ${formula_fullnames[$i]}"
+
+							if [[ $rename == "Y" || $rename == "y" ]]; then
+								mv $file "${file%.*}_${formula_names[$i]}.${file##*.}"
+							fi
+
 							break
 						fi
 					done
