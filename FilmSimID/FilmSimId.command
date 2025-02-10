@@ -19,7 +19,7 @@ while $run; do
 		runSingleMode=true
 
 		while $runSingleMode; do
-			read -p 'Photo: ' path
+			read -p 'Photo: ' path argu
 			echo ''
 
 			if [[ $path == "exit" || $path == "x" ]]; then
@@ -29,7 +29,11 @@ while $run; do
 				runSingleMode=false
 			else
 				output=$(exiftool $path | grep -E "Film Mode|Saturation|Grain Effect Roughness|Grain Effect Size|Color Chrome Effect|Color Chrome FX Blue|White Balance|White Balance Fine Tune|Dynamic Range|Development Dynamic Range|Highlight Tone|Shadow Tone|Noise Reduction|Clarity")
-				#echo "$output"
+
+				if [[ "$argu" == *"-i"* ]]; then
+					exiftool $path | grep -E "Film Mode|Saturation|Grain Effect Roughness|Grain Effect Size|Color Chrome Effect|Color Chrome FX Blue|White Balance|White Balance Fine Tune|Dynamic Range|Development Dynamic Range|Highlight Tone|Shadow Tone|Noise Reduction|Clarity"
+					echo ''
+				fi
 
 				for i in ${!formulas[@]}; do
 					if [[ "$output" == *"${formulas[$i]}"* ]]; then
@@ -46,7 +50,7 @@ while $run; do
 		runMultiMode=true
 
 		while $runMultiMode; do
-			read -p 'Folder: ' path rename
+			read -p 'Folder: ' path argu
 			echo ''
 
 			if [[ $path == "exit" || $path == "x" ]]; then
@@ -62,7 +66,7 @@ while $run; do
 						if [[ "$output" == *"${formulas[$i]}"* ]]; then
 							echo "$(basename $file) ${formula_fullnames[$i]}"
 
-							if [[ $rename == "Y" || $rename == "y" ]]; then
+							if [[ $argu == *"-r"* ]]; then
 								mv $file "${file%.*}_${formula_names[$i]}.${file##*.}"
 							fi
 
