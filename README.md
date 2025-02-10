@@ -24,8 +24,14 @@ Supports: MacOS
 ### Single Photo Mode
 Single Photo Mode allows you to check individual photo's film simulation/recipe. To use Single Photo Mode, drag and drop the photo into the terminal window when prompted, then press enter.
 
+#### Arguments
+-i Displays exiftool output, helpful for formulating the ```FilmSimConfig.command``` file
+
 ### Multi Photo Mode
 Multi Photo Mode allows you to check all the photos' film simulation/recipe in a given directory. To use Multi Photo Mode, drag and drop the folder containing the desired photos to be checked into the terminal window when prompted, then press enter.
+
+#### Arguments
+-r Rename the photos in the folder and appends the film simulation/recipe ```formula_names``` that is matched
 
 # Configuration
 1. Navigate to the ```/Application/FilmSimId/FilmSimConfig.command``` script file
